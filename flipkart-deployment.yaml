@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: flipkart-deployment
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: flipkart
+   template:
+      metadata:
+         labels:
+            app: flipkart
+
+      spec:
+         containers:
+            - name: flipkart-containers
+              image: nginx
+              ports:
+              - containerPort: 80
+            
